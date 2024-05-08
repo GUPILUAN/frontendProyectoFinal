@@ -1,0 +1,23 @@
+
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+ }
+body{
+    background-image: url("https://getwallpapers.com/wallpaper/full/a/3/6/1363792-download-free-2018-ford-mustang-gt-wallpaper-1920x1080.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+body .table{
+    align-items: center;
+    
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
