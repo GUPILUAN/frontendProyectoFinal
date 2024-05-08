@@ -40,7 +40,6 @@ const Login = () => {
         const token = sessionStorage.getItem('token');   
         console.log(token);
         navigate("/show-user")
-        window.location.reload();
       }else{
         const data = await response.json();
         console.error("Form submission failed!");
