@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import Loader from "../Common/Loader";
 import "./User.css";
 const Login = () => {
   
-  const navigate = useNavigate();
+
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   
@@ -39,7 +38,7 @@ const Login = () => {
         sessionStorage.setItem('token', data.token);
         const token = sessionStorage.getItem('token');   
         console.log(token);
-        navigate("/show-user")
+        window.location.href = "/";  
       }else{
         const data = await response.json();
         console.error("Form submission failed!");

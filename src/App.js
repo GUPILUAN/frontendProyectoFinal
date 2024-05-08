@@ -32,9 +32,6 @@ function App() {
         <Route path="/car/:id" element={<Car />} />
         <Route path="/ownCars" element={<OwnCars />} />
 
-        
-
-
       </Routes> 
     </div>
   </div>

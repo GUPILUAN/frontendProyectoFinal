@@ -1,11 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import Loader from "../Common/Loader";
 import "./User.css";
 const EditUser = () => {
-  const navigate = useNavigate();
   const [user, setUser] = useState([]);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -60,7 +58,7 @@ const EditUser = () => {
       })
       .then((data) => {
         setIsLoading(true);
-        navigate("/show-user")
+        window.location.href = "/";
       })
       .catch((error) => {
         setError(error.message);
