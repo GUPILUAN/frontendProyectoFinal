@@ -39,7 +39,9 @@ class SlideBar extends Component {
     sessionStorage.removeItem("token");
     this.setState({
       showUserOptions: sessionStorage.getItem("token") ? true : false,
+      user:null
     });
+    
   };
 
   userIn() {
