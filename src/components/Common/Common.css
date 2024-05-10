@@ -224,6 +224,7 @@
   text-align: center;
   display: flex;
   justify-content: center;
+  margin-left: -30px;
 }
 
 .sidebar.active .menu > ul > li > a .text{
@@ -232,6 +233,7 @@
   transform: translateY(-50%);
   position: absolute;
   padding: 10px;
+  margin-left: -32px;
   border-radius: 4px;
   opacity: 0;
   visibility: hidden;
