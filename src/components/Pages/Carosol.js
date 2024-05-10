@@ -26,21 +26,21 @@ const Carasol = () => {
         <div className="carousel-inner">
           <div className="carousel-item active">
             <img
-              src={'https://www.w3schools.com/bootstrap5/la.jpg'}
+              src={'https://www.enterprise.com/es/exotic-car-rental/_jcr_content/root/container/container/container_1060086341/teaser.coreimg.jpeg/1708936909048/explore-our-vehicles-1920x1080-vehicles.jpeg'}
               alt="Los Angeles"
               className="d-block"
             />
           </div>
           <div className="carousel-item">
             <img
-              src={'https://www.w3schools.com/bootstrap5/ny.jpg'}
+              src={'https://st1.uvnimg.com/fa/47/e036a4d04115a883846765d369e6/autos-galeria.jpg'}
               alt="Chicago"
               className="d-block"
             />
           </div>
           <div className="carousel-item">
             <img
-              src={'https://www.w3schools.com/bootstrap5/chicago.jpg'}
+              src={'https://www.vwcomerciales.com.mx/idhub/content/dam/onehub_nfz/importers/mx/mundo-vwvc/combi-historia/schema/combi-historia_schema_combi-verde_16x9_1920x1080px_jun2022.jpg'}
               alt="New York"
               className="d-block"
             />
