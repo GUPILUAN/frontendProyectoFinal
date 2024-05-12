@@ -69,6 +69,8 @@ const ShowUser = () => {
         console.log(err);
       });
   };
+  const urlImg =
+    "https://th.bing.com/th/id/OIP.j_eWpTRqrOOdRgcSmcQv0gHaHp?w=202&h=209&c=7&r=0&o=5&dpr=2&pid=1.7";
 
   if (user.length < 0) {
     return <h1>no user found</h1>;
@@ -78,49 +80,49 @@ const ShowUser = () => {
         {isLoading && <Loader />}
         {error && <p>Error: {error}</p>}
 
-          {user.map((item) => {
-            return (
-              <div className="user">
-                <h1>
-                  User: {item.name}{" "}
-                  <span>
-                    <img
-                      src={item.image ? item.image : ""}
-                      alt="New York"
-                      className="user-image"
-                    />
-                  </span>
-                </h1>
+        {user.map((item) => {
+          return (
+            <div className="user">
+              <h1>
+                User: {item.name}{" "}
+                <span>
+                  <img
+                    src={item.image ? item.image : urlImg}
+                    alt="New York"
+                    className="user-image"
+                  />
+                </span>
+              </h1>
 
-                <p>Email: {item.email}</p>
-                <p>Address: {item.address}</p>
+              <p>Email: {item.email}</p>
+              <p>Address: {item.address}</p>
 
-                <div className="user-actions">
-               
-                  <Link to={`/edit-user/${item._id}`}>
-                    <i className="fas fa-pencil" aria-hidden="true"><span> Edit</span></i>
-                  </Link>
-
-                  {item.isOwner && (
-                    <Link to={`/ownCars`}>
-                      <i className="fas fa-car" aria-hidden="true">
-                        <span> My cars</span>
-                      </i>
-                    </Link>
-                  )}
-
-                  <i
-                    className="fas fa-trash"
-                    aria-hidden="true"
-                    onClick={() => handelDelete(item._id)}
-                  >
-                    <span> Erase account</span>
+              <div className="user-actions">
+                <Link to={`/edit-user/${item._id}`}>
+                  <i className="fas fa-pencil" aria-hidden="true">
+                    <span> Edit</span>
                   </i>
-                </div>
+                </Link>
+
+                {item.isOwner && (
+                  <Link to={`/ownCars`}>
+                    <i className="fas fa-car" aria-hidden="true">
+                      <span> My cars</span>
+                    </i>
+                  </Link>
+                )}
+
+                <i
+                  className="fas fa-trash"
+                  aria-hidden="true"
+                  onClick={() => handelDelete(item._id)}
+                >
+                  <span> Erase account</span>
+                </i>
               </div>
-            );
-          })}
-      
+            </div>
+          );
+        })}
       </div>
     );
   }

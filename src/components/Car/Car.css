@@ -7,10 +7,10 @@
   max-width: 500px;
   margin: 0px auto;
   padding: 35px 35px 50px 35px;
-  background-color: #ffffff;
+  background-color: rgba(17, 0, 0, 0.1);
+  backdrop-filter: blur(19px) saturate(180%);
   border-radius: 30px;
 }
-
 .form-control {
   border-radius: 0px !important;
 }
@@ -62,25 +62,22 @@
   cursor: pointer;
 }
 
-.container {
-  padding: 0px 100px 0px 200px;
-}
 .form-control {
   border-radius: 0px !important;
 }
 
 .car {
   max-width: auto;
-  margin: 0px auto;
-  padding: 35px 35px 30px 200px;
-  background-color: rgba(234, 234, 234,0.1);
+  padding: 35px 35px 30px 100px;
+  background-color: rgba(234, 234, 234, 0.1);
   backdrop-filter: blur(19px) saturate(180%);
   border-radius: 30px;
+  overflow: auto;
 }
 
-.book{
-   text-align: center;
-   margin-top: 20px;
+.book {
+  text-align: center;
+  margin-top: 20px;
 }
 .custom-table {
   color: #c0c0c0;
@@ -107,10 +104,44 @@
   border-bottom: none;
 }
 
-.btn-custom{
-  background-color: #000000a1;&:hover {
-    background-color: #646466;
+@media screen and (max-width: 600px) {
+  .custom-table {
+    overflow-x: auto;
+  }
+}
 
+.btn-custom {
+  background-color: #000000a1;
+  &:hover {
+    background-color: #646466;
   }
   color: #fffff1;
+}
+
+.car-image img {
+  max-width: 300px;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 30px;
+  transition: all 0.3s;
+  margin-left: 390px;
+}
+.car-image img:hover {
+  max-width: 500px;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 30px;
+  margin-left: 300px;
+}
+
+.uploaded-car-image button {
+  margin-left: 10px;
+  width: auto;
+  height: auto;
+}
+.uploaded-car-image img {
+  height: 90px;
+  width: 160px;
+  overflow: hidden;
+  object-fit: cover;
 }

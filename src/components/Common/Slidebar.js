@@ -80,7 +80,7 @@ class SlideBar extends Component {
       "https://th.bing.com/th/id/OIP.j_eWpTRqrOOdRgcSmcQv0gHaHp?w=202&h=209&c=7&r=0&o=5&dpr=2&pid=1.7";
     const { user } = this.state;
     return (
-      <div className="">
+      <div>
         <div className={!this.state.showSideBar ? "active sidebar" : "sidebar"}>
           <div className="menu-btn">
             <i
@@ -96,7 +96,7 @@ class SlideBar extends Component {
             <div className="user-img">
               <img
                 src={user && user.image ? user.image : urlImg}
-                alt="New York"
+                alt="NoImage"
                 className="d-block"
               />
             </div>

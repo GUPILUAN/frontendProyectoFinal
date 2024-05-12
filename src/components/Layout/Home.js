@@ -1,11 +1,11 @@
-import React from 'react'
-import Carasol from '../Pages/Carosol'
-const Home = ()=> {
+import React from "react";
+import Carasol from "../Pages/Carosol";
+const Home = () => {
   return (
     <div>
       <Carasol />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

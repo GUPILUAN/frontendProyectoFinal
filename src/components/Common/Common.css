@@ -40,11 +40,6 @@
   text-transform: uppercase;
 }
 
-.container {
-  width: 100%;
-  min-width: 100vh;
-  
-}
 .sidebar {
   width: 256px;
   height: 100vh;
@@ -198,38 +193,38 @@
   color: #fff;
   cursor: pointer;
   &:hover {
-    background-color: rgba(17, 0, 0, 0.2); 
+    background-color: rgba(17, 0, 0, 0.2);
   }
 }
 
 .menu-btn i {
   transition: all 0.3s;
 }
-.sidebar.active{
+.sidebar.active {
   width: 92px;
 }
-.sidebar.active .menu-btn{
+.sidebar.active .menu-btn {
   transform: rotate(180deg);
 }
-.sidebar.active .user-details{
+.sidebar.active .user-details {
   display: none;
 }
-.sidebar.active .menu .title{
+.sidebar.active .menu .title {
   text-align: center;
 }
-.sidebar.active .menu ul li .arrow{
+.sidebar.active .menu ul li .arrow {
   display: none;
 }
-.sidebar.active .menu > ul > li > a{
+.sidebar.active .menu > ul > li > a {
   text-align: center;
   display: flex;
   justify-content: center;
   margin-left: -30px;
 }
 
-.sidebar.active .menu > ul > li > a .text{
+.sidebar.active .menu > ul > li > a .text {
   left: 70px;
-  top:50%;
+  top: 50%;
   transform: translateY(-50%);
   position: absolute;
   padding: 10px;
@@ -240,7 +235,7 @@
   transition: all 0.3s;
 }
 
-.sidebar.active .menu > ul > li > a .text::after{
+.sidebar.active .menu > ul > li > a .text::after {
   content: "";
   position: absolute;
   left: -5px;
@@ -254,7 +249,7 @@
   transition: all 0.3s;
 }
 
-.sidebar.active .menu > ul > li > a:hover .text{
+.sidebar.active .menu > ul > li > a:hover .text {
   left: 50px;
   opacity: 1;
   visibility: visible;

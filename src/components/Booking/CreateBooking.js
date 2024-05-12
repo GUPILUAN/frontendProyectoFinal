@@ -17,13 +17,11 @@ const CreateBooking = () => {
   });
 
   const handelInput = (event) => {
-    
     const { id, value } = event.target;
     setBooking({
       ...booking,
       [id]: value,
     });
-    console.log(booking);
   };
 
   const handelSubmit = async (event) => {
@@ -72,44 +70,45 @@ const CreateBooking = () => {
   };
 
   return (
-    <div className="booking-form">
-      <div className="heading">
-        {isLoading && <Loader />}
-        {error && <p>Error: {error}</p>}
-        <p>Make booking</p>
+    <div className="container">
+      <div className="booking-form">
+        <div className="heading">
+          {isLoading && <Loader />}
+          {error && <p>Error: {error}</p>}
+          <p>Make booking</p>
+        </div>
+        <form onSubmit={handelSubmit}>
+          <div className="">
+            <label htmlFor="startingDate" className="form-label">
+              Starting Date and Time
+            </label>
+            <input
+              type="datetime-local"
+              className="form-control"
+              id="startingDate"
+              name="startingDate"
+              value={booking.startingDate}
+              onChange={handelInput}
+            />
+          </div>
+          <div className="mb-3 mt-3">
+            <label htmlFor="endingDate" className="form-label">
+              Ending Date and Time
+            </label>
+            <input
+              type="datetime-local"
+              className="form-control"
+              id="endingDate"
+              name="endingDate"
+              value={booking.endingDate}
+              onChange={handelInput}
+            />
+          </div>
+          <button type="submit" className="btn btn-primary submit-btn">
+            Submit
+          </button>
+        </form>
       </div>
-      <form onSubmit={handelSubmit}>
-        <div className="">
-          <label htmlFor="startingDate" className="form-label">
-            Starting Date
-          </label>
-          
-          <input
-            type="date"
-            className="form-control"
-            id="startingDate"
-            name="startingDate"
-            value={booking.startingDate}
-            onChange={handelInput}
-          />
-        </div>
-        <div className="mb-3 mt-3">
-          <label htmlFor="endingDate" className="form-label">
-            Ending Date
-          </label>
-          <input
-            type="date"
-            className="form-control"
-            id="endingDate"
-            name="endingDate"
-            value={booking.endingDate}
-            onChange={handelInput}
-          />
-        </div>
-        <button type="submit" className="btn btn-primary submit-btn">
-          Submit
-        </button>
-      </form>
     </div>
   );
 };

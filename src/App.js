@@ -16,25 +16,24 @@ import OwnCars from "./components/Car/OwnCars";
 function App() {
   return (
     <div className="App">
-    <Slidebar />
-    <div className="">
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/edit-user/:id" element={<EditUser />} />
-        <Route path="/user/:id" element={<User />} />
-        <Route path="/create-user" element={<CreateUser />} />
-        <Route path="/show-user" element={<ShowUser />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/bookings/:carBooked" element={<CreateBooking />} />
-        <Route path="/my-bookings" element={<ShowBookings/>} />
-        <Route path="/cars" element={<ShowCars />} />
-        <Route path="/create-car" element={<CreateCar />} />
-        <Route path="/car/:id" element={<Car />} />
-        <Route path="/ownCars" element={<OwnCars />} />
-
-      </Routes> 
+      <Slidebar />
+      <div className="">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/edit-user/:id" element={<EditUser />} />
+          <Route path="/user/:id" element={<User />} />
+          <Route path="/create-user" element={<CreateUser />} />
+          <Route path="/show-user" element={<ShowUser />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/bookings/:carBooked" element={<CreateBooking />} />
+          <Route path="/my-bookings" element={<ShowBookings />} />
+          <Route path="/cars" element={<ShowCars />} />
+          <Route path="/create-car" element={<CreateCar />} />
+          <Route path="/car/:id" element={<Car />} />
+          <Route path="/ownCars" element={<OwnCars />} />
+        </Routes>
+      </div>
     </div>
-  </div>
   );
 }
 

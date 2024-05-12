@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Loader from "../Common/Loader";
+import ImageUploader from "../Common/ImageUploader";
 import "./Car.css";
 
 const CreateCar = () => {
   const navigate = useNavigate();
   const createCarApi = process.env.REACT_APP_API_URL + "/cars";
+  const [imageDataURL, setImageDataURL] = useState(null);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [car, setCar] = useState({
@@ -18,6 +20,7 @@ const CreateCar = () => {
     pricePerDay: "",
     location: "",
     insurance: "",
+    image: "",
   });
 
   const handelInput = (event) => {
@@ -26,6 +29,19 @@ const CreateCar = () => {
     setCar({ ...car, [name]: value });
   };
 
+  const handleImageUpload = (dataURL) => {
+    if (dataURL) {
+      setImageDataURL(dataURL);
+      setCar({ ...car, image: dataURL });
+    } else {
+      setError("Imagen muy pesada");
+    }
+  };
+
+  const handleImageDelete = () => {
+    setImageDataURL(null);
+    setCar({ ...car, image: null });
+  };
   const handelSubmit = async (event) => {
     const token = sessionStorage.getItem("token");
 
@@ -54,6 +70,7 @@ const CreateCar = () => {
           pricePerDay: "",
           location: "",
           insurance: "",
+          image: "",
         });
         navigate("/ownCars");
       } else {
@@ -69,12 +86,13 @@ const CreateCar = () => {
   };
 
   return (
-    <div className="car-form">
-      <div className="heading">
-        {isLoading && <Loader />}
-        {error && <p>Error: {error}</p>}
-        <p>Register Car</p>
-      </div>
+    <div className="container">
+      <div className="car-form">
+        <div className="heading">
+          {isLoading && <Loader />}
+          {error && <p>Error: {error}</p>}
+          <p>Register Car</p>
+        </div>
         <form onSubmit={handelSubmit}>
           <div className="mb-3">
             <label htmlFor="model" className="form-label">
@@ -193,12 +211,27 @@ const CreateCar = () => {
               onChange={handelInput}
             />
           </div>
+          <div className="mb-3">
+            <h1 className="form-label">Car Image (Max 5MB Total)</h1>
+            {!imageDataURL && (
+              <ImageUploader onImageUpload={handleImageUpload} />
+            )}
+            {imageDataURL && (
+              <div className="uploaded-car-image">
+                <img src={imageDataURL} alt="Imagen Cargada" />
+                <button className="btn" onClick={handleImageDelete}>
+                  <i className="fas fa-trash"></i>
+                </button>
+              </div>
+            )}
+          </div>
+
           <button type="submit" className="btn btn-primary submit-btn">
             Submit
           </button>
         </form>
+      </div>
     </div>
-    
   );
 };
 

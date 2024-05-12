@@ -13,12 +13,11 @@ const User = () => {
     getUser();
   }, []);
 
-
   const getUser = () => {
     const token = sessionStorage.getItem("token");
 
     axios
-      .get(getUserApi.concat("/data") , {
+      .get(getUserApi.concat("/data"), {
         headers: {
           Authorization: `Bearer ${token}`,
         },

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Loader from "../Common/Loader";
-import "./Car.css"
+import "./Car.css";
 
 const OwnCars = () => {
   const showCarsApi = process.env.REACT_APP_API_URL + "/cars";
@@ -39,8 +39,8 @@ const OwnCars = () => {
   };
   const getCars = () => {
     axios
-      .get(showCarsApi.concat("/") + "own",{
-        headers:{
+      .get(showCarsApi.concat("/") + "own", {
+        headers: {
           Authorization: `Bearer ${sessionStorage.getItem("token")}`,
         },
       })
@@ -56,7 +56,7 @@ const OwnCars = () => {
   if (!car.map) {
     return (
       <div className="container">
-        <h1 className="container">No cars found</h1>
+        <h1>No cars found</h1>
         <Link to={`/create-car`}>
           <i className="fas fa-car boton" aria-hidden="true">
             <span>Create new car</span>
@@ -70,13 +70,13 @@ const OwnCars = () => {
         {isLoading && <Loader />}
         {error && <p>Error: {error}</p>}
 
-            <Link to={`/create-car`}>
-              <div className="boton">
-              <i className="fas fa-car" aria-hidden="true">
-                <span> Register new car</span>
-              </i>
-              </div>
-            </Link>
+        <Link to={`/create-car`}>
+          <div className="boton">
+            <i className="fas fa-car" aria-hidden="true">
+              <span> Register new car</span>
+            </i>
+          </div>
+        </Link>
         <table className="custom-table">
           <thead>
             <tr>
